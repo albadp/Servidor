@@ -9,6 +9,7 @@
 
 <body>
     <form action="/ejercicios/actividad1/ejercicio7.php" method="POST">
+        <!-- se puede poner <label for=""></label> para asignar un enunciado a un input -->
         <h3>Introduce una palabra:</h3>
         <input type="text" name="palabra"><br>
         <h3>Introduce el anagrama:</h3>
@@ -17,13 +18,12 @@
     </form>
     <?php
         function anagrama(string $palabra, string $anagrama){
-            $palabra;
-            echo $palabra;
+            
 
         }
 
         if (isset($_POST['palabra']) && isset($_POST['anagrama'])){
-            echo numeroReal($_POST['numero']);
+            // echo anagrama(($_POST['palabra']), ($_POST['anagrama']));
         }
     ?>
 
