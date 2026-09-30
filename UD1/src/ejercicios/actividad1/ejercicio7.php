@@ -17,13 +17,29 @@
         <button type="submit">Enviar</button>
     </form>
     <?php
-        function anagrama(string $palabra, string $anagrama){
-            
+        function anagrama(string $palabra, string $anagrama):bool{
+            $palabra=strtolower($palabra);
+            $anagrama=strtolower($anagrama);
+            if(strlen($palabra)!== strlen($anagrama)){
+                return false;
+            }
+            if($palabra === $anagrama){
+                return false;
+            }
+            $arrayPalabra = str_split($palabra);
+            foreach($arrayPalabra as $letra){
+                if(($i = strpos($anagrama,$letra)) === false){
+                    return false;
+                }else{
+                    $anagrama = substr_replace($anagrama,"",$i,1);
+                }
+            }
+            return true;
 
         }
 
         if (isset($_POST['palabra']) && isset($_POST['anagrama'])){
-            // echo anagrama(($_POST['palabra']), ($_POST['anagrama']));
+            echo anagrama($_POST['palabra'], $_POST['anagrama'])?"es anagrama":"no es anagrama";
         }
     ?>
 
