@@ -19,7 +19,7 @@
     <input type="number" name="numero5"><br>
     <button type="submit">Enviar</button>
     <?php 
-    function crearArray( $a, $b, $c, $d, $e):array{
+    function crearArray( int $a,int  $b,int  $c, int $d,int $e):array{
         return $array=[$a,$b,$c,$d,$e];
     }
 
