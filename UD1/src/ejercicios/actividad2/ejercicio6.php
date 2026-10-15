@@ -1,9 +1,17 @@
 <?php
 include_once "ejercicio1-2.php";
 
-class Profesor extends Persona{
+include_once "ejercicio9.php";
+
+class Profesor extends PersonaAbstracta{
 
     protected string $especialidad;
+
+    public function __construct(string $especialidad, string $nombre, int $edad)
+    {
+        $this->especialidad = $especialidad;
+        parent::__construct($nombre, $edad);
+    }
 
     public function getEspecialidad():string{
         return $this->especialidad;
@@ -15,7 +23,13 @@ class Profesor extends Persona{
 
     #[Override]
     public function mostrarInformacion(): string {
-        return parent::mostrarInformacion() . " especialidad: " . $this->especialidad;
+        return "soy el profesor " . $this->nombre . " con la especialidad: " . $this->especialidad;
+    }
+
+    #[Override]
+    public function esMayorDeEdad(): bool
+    {
+        return $this->edad>17;
     }
 }
 

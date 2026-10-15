@@ -1,6 +1,10 @@
 <?php
 class Direccion {
 
+    /**
+     * Para insertar getters y setters con el ide:
+     * seleccionar un atributo, click derecho, insert getters and setters
+     */
     protected string $calle;
     protected string $ciudad;
     protected int $codigoPostal;
