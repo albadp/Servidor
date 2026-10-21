@@ -65,6 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="password" name="contrasena"><br>
         <button type="submit">Agregar</button>
     </form>
-    </body>
+    <br>
+    <p>Tienes cuenta?</p>
+    <a href="login.php">Inicia sesión</a>
+</body>
 
 </html>
