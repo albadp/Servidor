@@ -70,6 +70,5 @@ function getJuegos(): array{
     </table>
     <h2>Quieres añadir un nuevo videojuego?</h2>
     <a href="alta.php">Añadelo aquí</a>
-
 </body>
 </html>
