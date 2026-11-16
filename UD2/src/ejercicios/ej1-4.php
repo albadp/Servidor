@@ -1,9 +1,15 @@
 <?php
 
 if (isset($_COOKIE['login'])) {
-    $name = strval($_COOKIE['login']);
-} else {
-    $name = '';
+    $name = $_COOKIE['login'];
+} 
+if(isset($_POST['name']) && !empty($_POST['name'])){
+    $name = $_POST['name'];
+    setcookie(
+        name:"login",
+        value: $name,
+        expires_or_options: time() +5
+    );
 }
 ?>
 
@@ -15,30 +21,18 @@ if (isset($_COOKIE['login'])) {
     <title>login</title>
 </head>
 <body>
+    <?php 
+    if(isset($name)):
+        echo "Bienvenido/a $name !";
+    else:
+    ?>
     <form action="" method="post">
         <label for="name">Nombre:</label>
         <input type="text" name="name"><br>
         <button type="submit">Iniciar Sesión:</button>
     </form>
     <?php
-    //IF IMPORTANTE!!!
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if(isset($name)){
-                $name = $_POST['name'];
-            }
-    
-        setcookie(
-            name:"login",
-            value: $name,
-            expires_or_options: time() +3600,
-            path: "/ejercicios/ej1-4.php",
-            domain: "",
-            secure: true,
-            httponly: true
-        );
-        echo "Bienvenido/a $name !";
-        }
-        
+    endif;
     ?>
 </body>
 </html>
